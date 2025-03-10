@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitFlow.Views.AboutPage"
+             Title="About FitFlow"
+             BackgroundColor="#f4f4f4">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <!-- Header -->
+            <Label Text="About FitFlow"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="#025D93" />
+
+            <!-- Image -->
+            <Frame CornerRadius="10" Padding="0" HasShadow="True">
+                <Image Source="https://wallpapercave.com/wp/wp8077459.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="200"
+                       HorizontalOptions="FillAndExpand" />
+            </Frame>
+
+            <!-- Introduction -->
+            <Label Text="FitFlow is an innovative exercise app designed to help you achieve your fitness goals. Whether you're looking to lose weight, build muscle, or simply stay healthy, GymBuddy provides personalized workout plans tailored to your needs."
+                   TextColor="#444"
+                   FontSize="16"
+                   LineBreakMode="WordWrap" />
+
+            <!-- Features -->
+            <Label Text="Features:"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#025D93" />
+            <StackLayout Spacing="10">
+                <Label Text="• Personalized workout plans based on your fitness level."
+                       TextColor="#666"
+                       FontSize="16" />
+                <Label Text="• Progress tracking to monitor your improvements."
+                       TextColor="#666"
+                       FontSize="16" />
+                <Label Text="• Expert advice and tips to optimize your workouts."
+                       TextColor="#666"
+                       FontSize="16" />
+                <Label Text="• Social sharing options to connect with friends."
+                       TextColor="#666"
+                       FontSize="16" />
+                <Label Text="• Variety of exercises for all muscle groups and fitness levels."
+                       TextColor="#666"
+                       FontSize="16" />
+            </StackLayout>
+
+            <!-- Testimonials -->
+            <Label Text="Testimonials"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#025D93" />
+            <StackLayout Spacing="10">
+                <Label Text="• User 1: 'FitFlow has transformed my fitness journey. The customized plans and progress tracking are fantastic!'"
+                       TextColor="#666"
+                       FontSize="16"
+                       LineBreakMode="WordWrap" />
+                <Label Text="• User 2: 'I love the variety of workouts and the easy-to-use interface. Highly recommend it!'"
+                       TextColor="#666"
+                       FontSize="16"
+                       LineBreakMode="WordWrap" />
+                <Label Text="• User 3: 'The app keeps me motivated with its detailed tracking and friendly reminders. Great app for fitness enthusiasts!'"
+                       TextColor="#666"
+                       FontSize="16"
+                       LineBreakMode="WordWrap" />
+            </StackLayout>
+
+            <!-- Call to Action -->
+            <Label Text="Ready to get started with your fitness journey? Download GymBuddy today and start achieving your goals!"
+                   TextColor="#444"
+                   FontSize="18"
+                   LineBreakMode="WordWrap"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Download Button -->
+            <Button Text="Download Now"
+                    BackgroundColor="#D32F2F"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"
+                    FontSize="18"
+                    Padding="10" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

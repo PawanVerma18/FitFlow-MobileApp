@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitFlow.Views.ExercisesPage"
+             Padding="20"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Resources>
+        <Style x:Key="HeaderLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="36" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+        </Style>
+        <Style x:Key="ExerciseNameLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+        </Style>
+        <Style x:Key="ExerciseDescriptionLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+            <Setter Property="LineBreakMode" Value="WordWrap" />
+        </Style>
+        <Style x:Key="DurationLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontAttributes" Value="Italic" />
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+        </Style>
+        <Style x:Key="InstructionHeaderStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+        </Style>
+        <Style x:Key="InstructionTextStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="20">
+        <!-- Header -->
+        <Label Text="All Exercises"
+               Style="{StaticResource HeaderLabelStyle}" />
+
+        <!-- Exercise List -->
+        <ListView x:Name="ExercisesListView"
+                  HasUnevenRows="True"
+                  SeparatorColor="{StaticResource PrimaryColor}"
+                  ItemTapped="OnItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="15"
+                               CornerRadius="10"
+                               HasShadow="True"
+                               BackgroundColor="White"
+                               Margin="0,5">
+                            <StackLayout Spacing="10">
+                                <!-- Exercise Image and Details -->
+                                <StackLayout Orientation="Horizontal" Spacing="15">
+                                    <Image Source="{Binding ImageUrl}" 
+                                           WidthRequest="80" 
+                                           HeightRequest="80" 
+                                           Aspect="AspectFill" 
+                                           VerticalOptions="Center" />
+                                    <StackLayout>
+                                        <Label Text="{Binding ExerciseName}" 
+                                               Style="{StaticResource ExerciseNameLabelStyle}" />
+                                        <Label Text="{Binding ExerciseDescription}" 
+                                               Style="{StaticResource ExerciseDescriptionLabelStyle}" />
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <!-- Additional Information -->
+                                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="End">
+                                    <Label Text="Duration:" Style="{StaticResource DurationLabelStyle}" />
+                                    <Label Text="{Binding Duration}" Style="{StaticResource DurationLabelStyle}" />
+                                </StackLayout>
+
+                                <!-- Hidden Details -->
+                                <StackLayout IsVisible="{Binding IsDetailVisible}" Padding="10">
+                                    <!-- Video Player -->
+                                    <WebView Source="{Binding VideoUrl}"
+                                             WidthRequest="300"
+                                             HeightRequest="200"
+                                             VerticalOptions="FillAndExpand" />
+
+                                    <!-- Instructions -->
+                                    <Label Text="Instructions" Style="{StaticResource InstructionHeaderStyle}" />
+                                    <Label Text="{Binding HowToDo}" Style="{StaticResource InstructionTextStyle}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

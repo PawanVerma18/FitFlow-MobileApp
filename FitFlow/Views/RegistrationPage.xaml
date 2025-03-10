@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitFlow.Views.RegistrationPage"
+             Title="Buy Membership"
+             BackgroundColor="#f4f4f4">
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="20">
+
+            <!-- Membership Plan Dropdown -->
+            <Label Text="Select Membership Plan"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#333" />
+            <Button Text="{Binding SelectedPlan.Name, StringFormat='Selected: {0}'}"
+                    BackgroundColor="#4A90E2"
+                    TextColor="White"
+                    CornerRadius="25"
+                    FontSize="Medium"
+                    HorizontalOptions="Fill"
+                    HeightRequest="50"
+                    Clicked="OnDropdownClicked" />
+
+            <!-- Dropdown List (Initially Hidden) -->
+            <CollectionView ItemsSource="{Binding MembershipPlans}"
+                            IsVisible="{Binding IsDropdownVisible}"
+                            SelectionMode="Single"
+                            SelectedItem="{Binding SelectedPlan, Mode=TwoWay}"
+                            BackgroundColor="White"
+                            HeightRequest="150">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Name}"
+                                   FontSize="Medium"
+                                   TextColor="#333" />
+                            <Label Text="{Binding Price}"
+                                   FontSize="Small"
+                                   TextColor="#666" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- User Details Section -->
+            <Frame CornerRadius="15"
+                   BackgroundColor="White"
+                   Padding="20"
+                   HasShadow="True">
+                <StackLayout>
+                    <Label Text="User Details"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#333"
+                           HorizontalOptions="Center" />
+
+                    <!-- Name -->
+                    <Entry Placeholder="Full Name"
+                           Text="{Binding FullName}"
+                           BackgroundColor="Transparent"
+                           TextColor="#333"
+                           FontSize="Medium" />
+
+                    <!-- Email -->
+                    <Entry Placeholder="Email"
+                           Text="{Binding Email}"
+                           Keyboard="Email"
+                           BackgroundColor="Transparent"
+                           TextColor="#333"
+                           FontSize="Medium" />
+
+                    <!-- Phone Number -->
+                    <Entry Placeholder="Phone Number"
+                           Text="{Binding PhoneNumber}"
+                           Keyboard="Telephone"
+                           BackgroundColor="Transparent"
+                           TextColor="#333"
+                           FontSize="Medium" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Payment Details Section -->
+            <Frame CornerRadius="15"
+                   BackgroundColor="White"
+                   Padding="20"
+                   HasShadow="True">
+                <StackLayout>
+                    <Label Text="Payment Details"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#333"
+                           HorizontalOptions="Center" />
+
+                    <!-- Card Number -->
+                    <Entry Placeholder="Card Number"
+                           Text="{Binding CardNumber}"
+                           Keyboard="Numeric"
+                           BackgroundColor="Transparent"
+                           TextColor="#333"
+                           FontSize="Medium" />
+
+                    <!-- Expiry Date -->
+                    <Entry Placeholder="Expiry Date (MM/YY)"
+                           Text="{Binding ExpiryDate}"
+                           Keyboard="Numeric"
+                           BackgroundColor="Transparent"
+                           TextColor="#333"
+                           FontSize="Medium" />
+
+                    <!-- CVV -->
+                    <Entry Placeholder="CVV"
+                           Text="{Binding CVV}"
+                           Keyboard="Numeric"
+                           BackgroundColor="Transparent"
+                           TextColor="#333"
+                           FontSize="Medium" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Buy Now Button -->
+            <Button Text="Buy Now"
+                    BackgroundColor="#ff7f50"
+                    TextColor="White"
+                    CornerRadius="25"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    Clicked="OnBuyNowClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

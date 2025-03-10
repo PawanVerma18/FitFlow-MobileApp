@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitFlow.Views.UserDetailsPage"
+             Title="User Details"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <StackLayout Padding="20" Spacing="20">
+        <Label Text="User Details"
+               FontSize="36"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource PrimaryColor}" />
+
+        <Label Text="Name:"
+               FontSize="18"
+               TextColor="{StaticResource TextColor}" />
+        <Label x:Name="nameLabel"
+               FontSize="18"
+               TextColor="{StaticResource TextColor}" />
+
+        <Label Text="Email:"
+               FontSize="18"
+               TextColor="{StaticResource TextColor}" />
+        <Label x:Name="emailLabel"
+               FontSize="18"
+               TextColor="{StaticResource TextColor}" />
+    </StackLayout>
+</ContentPage>

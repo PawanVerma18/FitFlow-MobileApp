@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitFlow.Views.ContactPage"
+             Padding="20"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <ScrollView>
+        <StackLayout Spacing="20">
+            <!-- Header -->
+            <Label Text="Contact Us"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource PrimaryColor}" />
+
+            <!-- Name Entry -->
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   Padding="10"
+                   BackgroundColor="White">
+                <Entry x:Name="nameEntry"
+                       Placeholder="Name"
+                       TextColor="{StaticResource TextColor}" />
+            </Frame>
+
+            <!-- Email Entry -->
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   Padding="10"
+                   BackgroundColor="White">
+                <Entry x:Name="emailEntry"
+                       Placeholder="Email"
+                       Keyboard="Email"
+                       TextColor="{StaticResource TextColor}" />
+            </Frame>
+
+            <!-- Message Editor -->
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   Padding="10"
+                   BackgroundColor="White">
+                <Editor x:Name="messageEditor"
+                        Placeholder="Message"
+                        HeightRequest="150"
+                        TextColor="{StaticResource TextColor}" />
+            </Frame>
+
+            <!-- Submit Button -->
+            <Button Text="Submit"
+                    BackgroundColor="{StaticResource PrimaryColor}"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Padding="10"
+                    Clicked="OnSubmitClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

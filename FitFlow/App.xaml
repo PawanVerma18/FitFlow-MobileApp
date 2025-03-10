@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitFlow.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Colors -->
+           
+                    <Color x:Key="BackgroundColor">#F5F5F5</Color>
+                    <Color x:Key="PrimaryColor">#025D93</Color>
+                   
+              
+
+           
+            <Color x:Key="AccentColor">#FF5722</Color>
+          
+            <Color x:Key="TextColor">#212121</Color>
+            <Color x:Key="ButtonColor">#2196F3</Color>
+
+            <!-- Fonts -->
+            <OnPlatform x:Key="HeaderFont" x:TypeArguments="x:String" Default="Arial-BoldMT" />
+            <OnPlatform x:Key="BodyFont" x:TypeArguments="x:String" Default="Arial" />
+
+            <!-- Styles -->
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                <Setter Property="FontFamily" Value="{StaticResource BodyFont}" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="FontFamily" Value="{StaticResource BodyFont}" />
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                <Setter Property="Margin" Value="10" />
+                <!-- Use Margin instead of Padding -->
+            </Style>
+
+            <Style TargetType="Editor">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

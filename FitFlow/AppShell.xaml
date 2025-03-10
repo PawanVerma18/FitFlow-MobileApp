@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:FitFlow.Views"
+       x:Class="FitFlow.AppShell"
+       BackgroundColor="{StaticResource PrimaryColor}">
+    <FlyoutItem Title="FitFlow" FlyoutDisplayOptions="AsMultipleItems" Icon="icon.png">
+        <ShellContent Title="Home" ContentTemplate="{DataTemplate local:HomePage}" />
+        <ShellContent Title="About FitFlow" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="All Exercises" ContentTemplate="{DataTemplate local:ExercisesPage}" />
+        <ShellContent Title="Membership" ContentTemplate="{DataTemplate local:MembershipPage}" />
+        <ShellContent Title="Contact Us" ContentTemplate="{DataTemplate local:ContactPage}" />
+    </FlyoutItem>
+</Shell>

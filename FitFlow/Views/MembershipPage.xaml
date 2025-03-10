@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitFlow.Views.MembershipPage"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <StackLayout Padding="20" Spacing="20">
+        <!-- Title -->
+        <Label Text="Membership Plans"
+               FontSize="36"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource PrimaryColor}" />
+
+        <!-- Basic Plan -->
+        <Frame CornerRadius="10"
+               HasShadow="True"
+               Padding="20"
+               BackgroundColor="White">
+            <StackLayout>
+                <Label Text="Basic Plan"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource PrimaryColor}" />
+                <Label Text="Access to basic workouts and tracking features."
+                       FontSize="18"
+                       TextColor="{StaticResource TextColor}" />
+                <Label Text="Price: $9.99/month"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource TextColor}" />
+                <Button Text="Subscribe Basic"
+                        BackgroundColor="{StaticResource PrimaryColor}"
+                        TextColor="White"
+                        CornerRadius="5"
+                        Clicked="OnSubscribeClicked"
+                        CommandParameter="Basic" />
+            </StackLayout>
+        </Frame>
+
+        <!-- Premium Plan -->
+        <Frame CornerRadius="10"
+               HasShadow="True"
+               Padding="20"
+               BackgroundColor="White">
+            <StackLayout>
+                <Label Text="Premium Plan"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource PrimaryColor}" />
+                <Label Text="Includes all features of the Basic Plan plus premium workouts, personalized plans, and priority support."
+                       FontSize="18"
+                       TextColor="{StaticResource TextColor}" />
+                <Label Text="Price: $19.99/month"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource TextColor}" />
+                <Button Text="Subscribe Premium"
+                        BackgroundColor="{StaticResource PrimaryColor}"
+                        TextColor="White"
+                        CornerRadius="5"
+                        Clicked="OnSubscribeClicked"
+                        CommandParameter="Premium" />
+            </StackLayout>
+        </Frame>
+
+
+    </StackLayout>
+</ContentPage>
